@@ -21,8 +21,6 @@ pnpm add telegram-html
 npm install telegram-html
 ```
 
-The prefix used for class names.
-
 ## Usage
 
 ### Convert Telegram Message to hast
@@ -179,14 +177,14 @@ htmlToMessage("This is <b>bold text</b>", { skipAutoEntities: false });
 
 ## FAQ
 
-### How to Convert a Telegram Message Into Markdown and Vice Versa?
+### How to convert a Telegram Message into Markdown and vice versa?
 
 `telegram-html` does not provide a way to convert [Telegram Message][tg-msg] into Markdown. However,
 since HTML is widely supported, you can use [`messageToHtml`](#convert-telegram-message-to-html) to
 convert the [Telegram Message][tg-msg] into HTML first, then convert HTML to Markdown using
 third-party package and vice versa.
 
-### How to Modify the Output?
+### How to modify the output?
 
 `telegram-html` provides conversion to [hast][]. That way, it brings you the flexibility to modify them.
 
