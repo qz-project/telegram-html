@@ -13,7 +13,7 @@ pnpm installed on your system. If you haven't installed it yet, please refer to 
 
 1. Fork the repository
 2. Clone your fork:
-   `git clone https://github.com/Quadratz-Org/telegram-html.git`
+   `git clone https://github.com/qz-project/telegram-html.git`
 3. Navigate to the project directory: `cd telegram-html`
 4. Install dependencies: `pnpm install`
 5. Start development: `pnpm run dev`
@@ -57,7 +57,7 @@ details can be found in [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
 ## Questions?
 
 If you have any questions, please [open an
-issue](https://github.com/Quadratz-Org/telegram-html/issues/new) for discussion or contact us via
+issue](https://github.com/qz-project/telegram-html/issues/new) for discussion or contact us via
 email at <quadratz@proton.me> or via Telegram at [@quadratz](https://t.me/quadratz).
 
 Thank you for contributing to `telegram-html`!

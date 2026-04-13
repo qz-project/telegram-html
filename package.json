@@ -14,12 +14,12 @@
     "telegram",
     "tree"
   ],
-  "homepage": "https://github.com/Quadratz-Org/telegram-html",
-  "bugs": "https://github.com/Quadratz-Org/telegram-html/issues",
+  "homepage": "https://github.com/qz-project/telegram-html",
+  "bugs": "https://github.com/qz-project/telegram-html/issues",
   "license": "MIT",
   "author": "Quadratz",
   "repository": {
-    "url": "git+https://github.com/Quadratz-Org/telegram-html.git"
+    "url": "git+https://github.com/qz-project/telegram-html.git"
   },
   "files": [
     "dist"
