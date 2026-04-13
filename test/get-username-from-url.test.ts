@@ -1,6 +1,8 @@
 import type { HtmlToMessageOptions } from "telegram-html";
 import { htmlToMessage } from "telegram-html";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
+
+vi.setConfig({ testTimeout: 500 });
 
 const options: HtmlToMessageOptions = {
   skipAutoEntities: false,
