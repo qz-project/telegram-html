@@ -2,7 +2,7 @@
   "name": "telegram-html",
   "version": "0.0.0",
   "private": false,
-  "description": "Convert Telegram Bot API message entities into HTML, or hast, and vice versa.",
+  "description": "Convert Telegram Bot API message entity into HTML, or hast, and vice versa.",
   "keywords": [
     "api",
     "ast",
