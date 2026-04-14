@@ -63,8 +63,8 @@ Example:
 ```ts
 messageToHast(
   {
-    entities: [{ length: 9, offset: 8, type: "bold" }],
     text: "This is bold text",
+    entities: [{ type: "bold", offset: 8, length: 9 }],
   },
   { preserveEntityData: true },
 );
@@ -91,8 +91,8 @@ Example:
 ```ts
 messageToHtml(
   {
-    entities: [{ length: 9, offset: 8, type: "bold" }],
     text: "This is bold text",
+    entities: [{ type: "bold", offset: 8, length: 9 }],
   },
   { preserveEntityData: true },
 );
