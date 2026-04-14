@@ -3,6 +3,6 @@ onlyBuiltDependencies:
 # https://pnpm.io/supply-chain-security#prevent-exotic-transitive-dependencies
 blockExoticSubdeps: true
 # https://pnpm.io/supply-chain-security#delay-dependency-updates
-minimumReleaseAge: 1440
+minimumReleaseAge: 10080 # 7 days
 # https://pnpm.io/supply-chain-security#enforce-trust-with-trustpolicy
 trustPolicy: no-downgrade
