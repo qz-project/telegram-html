@@ -1,7 +1,7 @@
 import type { ReadonlyDeep } from "type-fest";
-import type { MessageEntity } from "@/types/message-entity.ts";
-import type { WrapperEntity } from "@/types/message-to-hast.ts";
-import type { Message } from "@/types/message.ts";
+import type { MessageEntity } from "$src/types/message-entity.ts";
+import type { WrapperEntity } from "$src/types/message-to-hast.ts";
+import type { Message } from "$src/types/message.ts";
 
 /**
  * Extracts entities and their corresponding text segments.

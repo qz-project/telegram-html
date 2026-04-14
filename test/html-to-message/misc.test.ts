@@ -1,7 +1,5 @@
-import { htmlToMessage } from "telegram-html";
-import { it, expect, describe, vi } from "vitest";
-
-vi.setConfig({ testTimeout: 500 });
+import { htmlToMessage } from "$dist";
+import { it, expect, describe } from "vitest";
 
 describe("misc", () => {
   it("should ignore any irrelevant className attributes", () => {

@@ -1,7 +1,7 @@
 import { fromHtml } from "hast-util-from-html";
-import { hastToMessage } from "@/hast-to-message/index.ts";
-import type { HtmlToMessageOptions } from "@/types/html-to-message.ts";
-import type { Message } from "@/types/message.ts";
+import { hastToMessage } from "$src/hast-to-message/index.ts";
+import type { HtmlToMessageOptions } from "$src/types/html-to-message.ts";
+import type { Message } from "$src/types/message.ts";
 
 /**
  * Converts HTML into Telegram Message.

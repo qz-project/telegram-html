@@ -4,8 +4,8 @@ import { select } from "hast-util-select";
 import { toText } from "hast-util-to-text";
 import { unescape } from "html-escaper";
 import parseUrl from "parse-url";
-import type { MergedOptions, RenderElementResult } from "@/types/hast-to-message.ts";
-import type { User } from "@/types/message-entity.ts";
+import type { MergedOptions, RenderElementResult } from "$src/types/hast-to-message.ts";
+import type { User } from "$src/types/message-entity.ts";
 import { getUsernameFromUrl } from "./get-username-from-url";
 
 function renderElement(opt: {
@@ -87,8 +87,8 @@ function renderElement(opt: {
         const unixTime = Math.floor(new Date(isoString).getTime() / 1000);
         return {
           entity: {
-            // @ts-expect-error it's user's responsibility to ensure the format is correct.
-            date_time_format: unescape(timeFormat),
+            // It's user's responsibility to ensure the format is correct.
+            date_time_format: unescape(timeFormat) as "",
             length,
             offset,
             type: "date_time",

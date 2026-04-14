@@ -1,5 +1,5 @@
 import type { ReadonlyDeep, RequiredDeep } from "type-fest";
-import type { MarkerType } from "@/message-to-hast/create-html-marker.ts";
+import type { MarkerType } from "$src/message-to-hast/create-html-marker.ts";
 import type { MessageEntity } from "./message-entity.ts";
 
 type MergedOptions = ReadonlyDeep<RequiredDeep<MessageToHastOptions>>;
@@ -18,7 +18,7 @@ interface WrapperEntity {
 }
 
 /**
- * Configuration options for `messageToHtml`.
+ * Configuration options for `messageToHast`.
  */
 interface MessageToHastOptions {
   /**

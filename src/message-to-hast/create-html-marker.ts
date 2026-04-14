@@ -1,5 +1,5 @@
 import type { ReadonlyDeep } from "type-fest";
-import type { HtmlMarker, WrapperEntity } from "@/types/message-to-hast.ts";
+import type { HtmlMarker, WrapperEntity } from "$src/types/message-to-hast.ts";
 
 enum MarkerType {
   START = -1,

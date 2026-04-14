@@ -1,7 +1,5 @@
-import { messageToHtml } from "telegram-html";
-import { describe, it, expect, vi } from "vitest";
-
-vi.setConfig({ testTimeout: 500 });
+import { messageToHtml } from "$dist";
+import { describe, it, expect } from "vitest";
 
 describe("option", () => {
   it("classPrefix", () => {
