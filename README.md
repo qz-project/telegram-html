@@ -8,22 +8,89 @@ Convert [Telegram Bot API message][tg-msg] entity into HTML, or [hast][], and vi
 ## Installation
 
 ```bash
+# npm
+npm install telegram-html
+
+# pnpm
+pnpm add telegram-html
+
 # Bun
 bun add telegram-html
 
 # Deno
 deno add npm:telegram-html
-
-# pnpm
-pnpm add telegram-html
-
-# npm
-npm install telegram-html
 ```
 
 ## Usage
 
+### Convert Telegram Message to HTML
+
+#### Example
+
+```ts
+messageToHtml(
+  {
+    text: "This is bold text",
+    entities: [{ type: "bold", offset: 8, length: 9 }],
+  },
+  { preserveEntityData: true },
+);
+```
+
+#### Output
+
+```html
+This is <b>bold text</b>
+```
+
+#### API
+
+```ts
+function messageToHtml(message: Message, options?: MessageToHtmlOptions): string;
+```
+
+This function converts a [Telegram message][tg-msg] into a semantic HTML string. It returns HTML string and accepts two arguments:
+
+- **message** (required)
+
+  The [Telegram message](tg-msg) to process.
+
+- **options** (optional)
+
+  Same options as [`messageToHast`](#convert-telegram-message-to-hast).
+
 ### Convert Telegram Message to hast
+
+#### Example
+
+```ts
+messageToHast(
+  {
+    text: "This is bold text",
+    entities: [{ type: "bold", offset: 8, length: 9 }],
+  },
+  { preserveEntityData: true },
+);
+```
+
+#### Output
+
+```json
+{
+  "type": "root",
+  "children": [
+    { "type": "text", "value": "This is " },
+    {
+      "type": "element",
+      "tagName": "b",
+      "properties": { "className": ["telegram-bold"] },
+      "children": [{ "type": "text", "value": "bold text" }]
+    }
+  ]
+}
+```
+
+#### API
 
 ```ts
 function messageToHast(message: Message, options?: MessageToHastOptions): Root;
@@ -43,7 +110,7 @@ This function converts [Telegram message][tg-msg] into [hast][]. It returns [has
     Adds a class attribute to the generated HTML tags.
 
     By default, classes are prefixed with `tg-` (e.g., `tg-bold`, `tg-custom-emoji`). If set to
-    `false`, classes are removed. Some entity (like hashtags) will become plain text because they
+    `false`, classes are removed. Some entities (like hashtags) will become plain text because they
     cannot be styled without classes.
 
   - **`classPrefix`** (optional, string, default: `tg-`)
@@ -56,49 +123,74 @@ This function converts [Telegram message][tg-msg] into [hast][]. It returns [has
 
     Set this to `true` if you need to convert the HTML back to [Telegram entity][tg-entity] later.
 
-    Note: This increases the HTML size.
+    **Note:** This increases the HTML size.
 
-Example:
+### Convert HTML to Telegram Message
 
-```ts
-messageToHast(
-  {
-    text: "This is bold text",
-    entities: [{ type: "bold", offset: 8, length: 9 }],
-  },
-  { preserveEntityData: true },
-);
-```
-
-### Convert Telegram Message to HTML
+#### Example
 
 ```ts
-function messageToHtml(message: Message, options?: MessageToHtmlOptions): string;
+htmlToMessage("This is <b>bold text</b>", { skipAutoEntities: false });
 ```
 
-This function converts a [Telegram message][tg-msg] into a semantic HTML string. It returns HTML string and accepts two arguments:
+#### Output
 
-- **message** (required)
+```json
+{
+  "text": "This is bold text",
+  "entities": [{ "type": "bold", "offset": 8, "length": 9 }]
+}
+```
 
-  The [Telegram message](tg-msg) to process.
+#### API
+
+```ts
+function htmlToMessage(html: string, options?: HtmlToMessageOptions): Message;
+```
+
+This function converts HTML into [Telegram message][tg-msg]. It returns [Telegram message][tg-msg] and provides two parameters:
+
+- **html** (required)
+
+  The HTML string to process.
 
 - **options** (optional)
 
-  Same options as [`messageToHast`](#convert-telegram-message-to-hast).
+  The configuration option. It has the exact same options as
+  [hastToMessage](#convert-hast-to-telegram-message).
 
-Example:
+### Convert hast to Telegram Message
+
+#### Example
 
 ```ts
-messageToHtml(
+hastToMessage(
   {
-    text: "This is bold text",
-    entities: [{ type: "bold", offset: 8, length: 9 }],
+    type: "root",
+    children: [
+      { type: "text", value: "This is " },
+      {
+        type: "element",
+        tagName: "b",
+        properties: { className: ["telegram-bold"] },
+        children: [{ type: "text", value: "bold text" }],
+      },
+    ],
   },
-  { preserveEntityData: true },
+  { classPrefix: "telegram-", skipAutoEntities: false },
 );
 ```
 
-### Convert hast to Telegram Message
+#### Output
+
+```json
+{
+  "text": "This is bold text",
+  "entities": [{ "type": "bold", "offset": 8, "length": 9 }]
+}
+```
+
+#### API
 
 ```ts
 function hastToMessage(hast: Root, options?: HastToMessageOptions): Message;
@@ -132,55 +224,13 @@ Converts [hast][] into a [Telegram message][tg-msg]. It returns [Telegram messag
 
   Set to `false` to include all entities.
 
-Example:
-
-```ts
-hastToMessage(
-  {
-    type: "root",
-    children: [
-      { type: "text", value: "This is " },
-      {
-        type: "element",
-        tagName: "b",
-        properties: { className: ["telegram-bold"] },
-        children: [{ type: "text", value: "bold text" }],
-      },
-    ],
-  },
-  { classPrefix: "telegram-", skipAutoEntities: false },
-);
-```
-
-### Convert HTML to Telegram Message
-
-```ts
-function htmlToMessage(html: string, options?: HtmlToMessageOptions): Message;
-```
-
-This function converts HTML into [Telegram message][tg-msg]. It returns [Telegram message][tg-msg] and provides two parameters:
-
-- **html** (required)
-
-  The HTML string to process.
-
-- **options** (optional)
-
-  The configuration option. It has the exact same options as
-  [hastToMessage](#convert-hast-to-telegram-message).
-
-Example:
-
-```ts
-htmlToMessage("This is <b>bold text</b>", { skipAutoEntities: false });
-```
-
 ## FAQ
 
 ### How to convert a Telegram Message into Markdown and vice versa?
 
-`telegram-html` does not provide a way to convert [Telegram Message][tg-msg] into Markdown. However,
-since HTML is widely supported, you can use [`messageToHtml`](#convert-telegram-message-to-html) to
+`telegram-html` does not provide a way to convert [Telegram Message][tg-msg] into Markdown.
+
+However, since HTML is widely supported, you can use [`messageToHtml`](#convert-telegram-message-to-html) to
 convert the [Telegram Message][tg-msg] into HTML first, then convert HTML to Markdown using
 third-party package and vice versa.
 
@@ -188,8 +238,8 @@ third-party package and vice versa.
 
 `telegram-html` provides conversion to [hast][]. That way, it brings you the flexibility to modify them.
 
-After you are done, you can convert them into HTML using
-[`toHtml`](https://github.com/syntax-tree/hast-util-to-html) or into a Telegram message using
+After you are done, you can convert the [hast][] into HTML using
+[`toHtml`](https://github.com/syntax-tree/hast-util-to-html), or into a [Telegram message][tg-msg] using
 [`hastToMessage`](#convert-hast-to-telegram-message).
 
 ## Contributing
