@@ -40,7 +40,7 @@ messageToHtml(
 #### Output
 
 ```html
-This is <b>bold text</b>
+This is <b class="tg-bold">bold text</b>
 ```
 
 #### API
@@ -76,16 +76,29 @@ messageToHast(
 
 #### Output
 
+**Note:** Some irrelevant properties like [`position`][unist-node] and [`data`][unist-node] have
+been omitted to keep it short.
+
 ```json
 {
   "type": "root",
   "children": [
-    { "type": "text", "value": "This is " },
+    {
+      "type": "text",
+      "value": "This is "
+    },
     {
       "type": "element",
       "tagName": "b",
-      "properties": { "className": ["telegram-bold"] },
-      "children": [{ "type": "text", "value": "bold text" }]
+      "properties": {
+        "className": ["tg-bold"]
+      },
+      "children": [
+        {
+          "type": "text",
+          "value": "bold text"
+        }
+      ]
     }
   ]
 }
@@ -258,3 +271,4 @@ Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for contribution guidelines.
 [hast]: https://github.com/syntax-tree/hast
 [tg-msg]: https://core.telegram.org/bots/api#message
 [tg-entity]: https://core.telegram.org/bots/api#messageentity
+[unist-node]: https://github.com/syntax-tree/unist?tab=readme-ov-file#node
