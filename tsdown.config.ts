@@ -7,7 +7,10 @@ const Config: UserConfig = defineConfig({
   platform: "neutral",
   target: "es2024",
   unbundle: true,
-  unused: { ignore: { dependencies: ["@types/hast"] } },
+  unused: {
+    enabled: true,
+    ignore: { dependencies: ["@types/hast"] },
+  },
 });
 
 // oxlint-disable-next-line import/no-default-export

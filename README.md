@@ -49,7 +49,8 @@ This is <b>bold text</b>
 function messageToHtml(message: Message, options?: MessageToHtmlOptions): string;
 ```
 
-This function converts a [Telegram message][tg-msg] into a semantic HTML string. It returns HTML string and accepts two arguments:
+This function converts a [Telegram message][tg-msg] into a semantic HTML string. It returns HTML
+string and accepts two arguments:
 
 - **message** (required)
 
@@ -96,7 +97,8 @@ messageToHast(
 function messageToHast(message: Message, options?: MessageToHastOptions): Root;
 ```
 
-This function converts [Telegram message][tg-msg] into [hast][]. It returns [hast Root](https://github.com/syntax-tree/hast?tab=readme-ov-file#root) and accepts two arguments:
+This function converts [Telegram message][tg-msg] into [hast][]. It returns
+[hast Root](https://github.com/syntax-tree/hast?tab=readme-ov-file#root) and accepts two arguments:
 
 - **message** (required)
 
@@ -148,7 +150,8 @@ htmlToMessage("This is <b>bold text</b>", { skipAutoEntities: false });
 function htmlToMessage(html: string, options?: HtmlToMessageOptions): Message;
 ```
 
-This function converts HTML into [Telegram message][tg-msg]. It returns [Telegram message][tg-msg] and provides two parameters:
+This function converts HTML into [Telegram message][tg-msg]. It returns [Telegram message][tg-msg]
+and provides two parameters:
 
 - **html** (required)
 
@@ -196,7 +199,8 @@ hastToMessage(
 function hastToMessage(hast: Root, options?: HastToMessageOptions): Message;
 ```
 
-Converts [hast][] into a [Telegram message][tg-msg]. It returns [Telegram message][tg-msg] and accepts two arguments:
+Converts [hast][] into a [Telegram message][tg-msg]. It returns [Telegram message][tg-msg] and
+accepts two arguments:
 
 - **hast** (required)
 
@@ -209,9 +213,9 @@ Converts [hast][] into a [Telegram message][tg-msg]. It returns [Telegram messag
 
     The prefix used to identify [Telegram entity][tg-entity].
 
-    By default, elements with a class name starting with `tg-` are identified as [Telegram entity][tg-entity].
-    For example, an element with the class `tg-custom-emoji` will be converted into a `custom_emoji`
-    entity type.
+    By default, elements with a class name starting with `tg-` are identified as [Telegram
+    entity][tg-entity]. For example, an element with the class `tg-custom-emoji` will be converted
+    into a `custom_emoji` entity type.
 
     Change this option if you are using a different prefix, such as `telegram-`.
 
@@ -230,17 +234,18 @@ Converts [hast][] into a [Telegram message][tg-msg]. It returns [Telegram messag
 
 `telegram-html` does not provide a way to convert [Telegram Message][tg-msg] into Markdown.
 
-However, since HTML is widely supported, you can use [`messageToHtml`](#convert-telegram-message-to-html) to
-convert the [Telegram Message][tg-msg] into HTML first, then convert HTML to Markdown using
-third-party package and vice versa.
+However, since HTML is widely supported, you can use
+[`messageToHtml`](#convert-telegram-message-to-html) to convert the [Telegram Message][tg-msg] into
+HTML first, then convert HTML to Markdown using third-party package and vice versa.
 
 ### How to modify the output?
 
-`telegram-html` provides conversion to [hast][]. That way, it brings you the flexibility to modify them.
+`telegram-html` provides conversion to [hast][]. That way, it brings you the flexibility to modify
+them.
 
 After you are done, you can convert the [hast][] into HTML using
-[`toHtml`](https://github.com/syntax-tree/hast-util-to-html), or into a [Telegram message][tg-msg] using
-[`hastToMessage`](#convert-hast-to-telegram-message).
+[`toHtml`](https://github.com/syntax-tree/hast-util-to-html), or into a [Telegram message][tg-msg]
+using [`hastToMessage`](#convert-hast-to-telegram-message).
 
 ## Contributing
 

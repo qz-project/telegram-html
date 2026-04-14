@@ -31,8 +31,8 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check",
+    "fmt": "prettier . --write",
+    "fmt:check": "prettier . --check",
     "lint": "oxlint --fix",
     "lint:check": "oxlint",
     "dev": "tsdown --watch",
@@ -57,9 +57,7 @@
     "@types/html-escaper": "^3.0.4",
     "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "^4.1.4",
-    "oxfmt": "^0.44.0",
-    "oxlint": "^1.59.0",
-    "oxlint-tsgolint": "^0.20.0",
+    "prettier": "^3.8.2",
     "tsdown": "^0.21.7",
     "type-fest": "^5.5.0",
     "unplugin-unused": "^0.5.7",
