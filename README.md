@@ -117,7 +117,7 @@ Converts [hast][] into a [Telegram message][tg-msg]. It returns [Telegram messag
 
     The prefix used to identify [Telegram entity][tg-entity].
 
-    By default, elements with a class name starting with `tg-` are identified as [Telegram entity]0[tg-entity].
+    By default, elements with a class name starting with `tg-` are identified as [Telegram entity][tg-entity].
     For example, an element with the class `tg-custom-emoji` will be converted into a `custom_emoji`
     entity type.
 
