@@ -11,7 +11,6 @@ import type { Message } from "@/types/message.ts";
  * const html = htmlToMessage('<b class="tg-bold">bold text</b>')
  * ```
  */
-// oxlint-disable-next-line typescript/prefer-readonly-parameter-types
 function htmlToMessage(html: string, options?: HtmlToMessageOptions): Message {
   const tree = fromHtml(html, { fragment: true });
   return hastToMessage(tree, options);

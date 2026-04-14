@@ -25,7 +25,6 @@ import { sortEntities } from "./sort-entities.ts";
  * })
  * ```
  */
-// oxlint-disable-next-line typescript/prefer-readonly-parameter-types
 function messageToHast(message: Message, options?: MessageToHastOptions): Root;
 function messageToHast(
   message: ReadonlyDeep<Message>,

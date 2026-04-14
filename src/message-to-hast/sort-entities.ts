@@ -37,7 +37,6 @@ const TYPE_PRIORITY = {
  * WARNING: This function performs an in-place sort, mutating the original
  * array.
  */
-// oxlint-disable-next-line typescript/prefer-readonly-parameter-types
 function sortEntities(entities: Entity[]): void {
   entities.sort((a, b) => {
     // 1. Position: Ascending (earlier starts first)

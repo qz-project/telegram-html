@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "test/**/*"],
-  "exclude": ["dist", "coverage", "build"]
+  "include": ["**/*.ts"],
+  "exclude": ["dist", "coverage", "node_modules"]
 }

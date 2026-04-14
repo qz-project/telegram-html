@@ -20,7 +20,6 @@ import type { Message } from "@/types/message.ts";
  * console.log(html) // 'This is <b class="tg-bold">bold text</b>'
  * ```
  */
-// oxlint-disable-next-line typescript/prefer-readonly-parameter-types
 function messageToHtml(message: Message, options?: MessageToHtmlOptions): string {
   const hast = messageToHast(message, options);
   return toHtml(hast as Nodes);

@@ -33,8 +33,7 @@
   "scripts": {
     "fmt": "prettier . --write",
     "fmt:check": "prettier . --check",
-    "lint": "oxlint --fix",
-    "lint:check": "oxlint",
+    "lint": "eslint . --fix && tsc --noEmit",
     "dev": "tsdown --watch",
     "build": "tsdown",
     "test": "vitest run --coverage test/",
@@ -54,12 +53,16 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/html-escaper": "^3.0.4",
     "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "^4.1.4",
+    "eslint": "^10.2.0",
     "prettier": "^3.8.2",
     "tsdown": "^0.21.7",
     "type-fest": "^5.5.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.1",
     "unplugin-unused": "^0.5.7",
     "vitest": "^4.1.4"
   }

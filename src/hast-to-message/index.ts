@@ -10,22 +10,18 @@ import { renderElement } from "./render-element.ts";
 /**
  * Converts [hast](https://github.com/syntax-tree/hast) into Telegram Message.
  */
-// oxlint-disable-next-line typescript/prefer-readonly-parameter-types
 function hastToMessage(hast: Root, options?: HastToMessageOptions): Message;
 function hastToMessage(
   tree_: ReadonlyDeep<Root>,
   userOpt_?: ReadonlyDeep<HastToMessageOptions>,
 ): Message {
-  // oxlint-disable-next-line typescript/no-unsafe-type-assertion
   const tree = tree_ as Root;
   const options: MergedOptions = { ...DEFAULT_OPTIONS, ...userOpt_ };
 
   let text = "";
   const entities: MessageEntity[] = [];
 
-  // oxlint-disable-next-line typescript/prefer-readonly-parameter-types
   visit(tree, (node) => {
-    // oxlint-disable-next-line typescript/switch-exhaustiveness-check
     switch (node.type) {
       case "element": {
         const result = renderElement({ node, offset: text.length, options });

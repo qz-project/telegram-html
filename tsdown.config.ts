@@ -13,5 +13,4 @@ const Config: UserConfig = defineConfig({
   },
 });
 
-// oxlint-disable-next-line import/no-default-export
 export default Config;

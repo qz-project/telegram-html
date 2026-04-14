@@ -158,7 +158,6 @@ function renderMarker(marker: HtmlMarker, options: MergedOptions): string {
   const renderedHtml = renderer(text, options.classPrefix, entity);
   const tree = fromHtml(renderedHtml, { fragment: true });
 
-  // oxlint-disable-next-line typescript/prefer-readonly-parameter-types
   visit(tree, "element", (node, index, parent) => {
     if (!options.withClass) {
       delete node.properties.className;

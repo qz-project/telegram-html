@@ -144,7 +144,6 @@ function renderElement(opt: {
       if (url.startsWith("tg://user?id=") && typeof dataUser === "string") {
         const { query } = parseUrl(url, true);
         if (Object.keys(query).length === 1) {
-          // oxlint-disable-next-line typescript/no-unsafe-type-assertion
           const user = JSON.parse(unescape(dataUser)) as User;
           return { entity: { length, offset, type: "text_mention", user } };
         }
@@ -177,9 +176,9 @@ function renderElement(opt: {
         };
       }
 
-      // oxlint-disable-next-line typescript/no-non-null-assertion
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const className = getAttribute(codeNode, "className")!;
-      // oxlint-disable-next-line typescript/no-non-null-assertion
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const classLanguage = className.split(" ").find((el) => el.startsWith("language-"))!;
       // 9 is the length of "language-"
       const language = classLanguage.slice(9);
