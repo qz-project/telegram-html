@@ -1,5 +1,5 @@
-onlyBuiltDependencies:
-  - esbuild
+allowBuilds:
+  esbuild: true
 # https://pnpm.io/supply-chain-security#prevent-exotic-transitive-dependencies
 blockExoticSubdeps: true
 # https://pnpm.io/supply-chain-security#delay-dependency-updates
