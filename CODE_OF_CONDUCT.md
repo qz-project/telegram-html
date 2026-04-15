@@ -1,4 +1,4 @@
-# Qz-Project Code of Conduct
+# Qz Project Code of Conduct
 
 ## Our Pledge
 
