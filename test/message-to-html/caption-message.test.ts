@@ -1,8 +1,6 @@
-import type { Message } from "telegram-html";
-import { messageToHtml } from "telegram-html";
-import { describe, it, expect, vi } from "vitest";
-
-vi.setConfig({ testTimeout: 500 });
+import type { Message } from "$dist";
+import { messageToHtml } from "$dist";
+import { describe, it, expect } from "vitest";
 
 const message: Message = {
   caption: "This is caption bold italic spoiler",

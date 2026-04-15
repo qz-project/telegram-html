@@ -20,7 +20,8 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "$src/*": ["./src/*"],
+      "$dist": ["./dist/"]
     }
   },
   "include": ["**/*.ts"],

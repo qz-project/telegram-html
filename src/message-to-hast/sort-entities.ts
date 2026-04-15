@@ -1,5 +1,5 @@
-import type { MessageEntity } from "@/types/message-entity.ts";
-import type { Entity } from "@/types/message-to-hast.ts";
+import type { MessageEntity } from "@grammyjs/types";
+import type { Entity } from "$src/types/message-to-hast.ts";
 
 /**
  * Priority definition for overlapping entities. Lower value = Higher priority

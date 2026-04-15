@@ -1,7 +1,5 @@
-import { messageToHtml } from "telegram-html";
-import { describe, it, expect, vi } from "vitest";
-
-vi.setConfig({ testTimeout: 500 });
+import { messageToHtml } from "$dist";
+import { describe, it, expect } from "vitest";
 
 describe("entity type", () => {
   it("blockquote", () => {
@@ -255,9 +253,9 @@ describe("entity type", () => {
   describe("unknown entity", () => {
     it("with type", () => {
       const html = messageToHtml({
+        text: "foo",
         // @ts-expect-error For testing
         entities: [{ length: 3, offset: 0, type: "unknown" }],
-        text: "foo",
       });
 
       expect(html).toBe('<span class="tg-unknown">foo</span>');
@@ -265,9 +263,9 @@ describe("entity type", () => {
 
     it("no type", () => {
       const html = messageToHtml({
+        text: "foo",
         // @ts-expect-error For testing
         entities: [{ length: 3, offset: 0 }],
-        text: "foo",
       });
 
       expect(html).toBe("foo");

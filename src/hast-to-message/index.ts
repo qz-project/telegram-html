@@ -1,9 +1,9 @@
 import type { ReadonlyDeep } from "type-fest";
 import { CONTINUE, SKIP, visit } from "unist-util-visit";
-import type { Root } from "@/index.ts";
-import type { HastToMessageOptions, MergedOptions } from "@/types/hast-to-message.ts";
-import type { MessageEntity } from "@/types/message-entity.ts";
-import type { Message } from "@/types/message.ts";
+import type { Root } from "$src/index.ts";
+import type { HastToMessageOptions, MergedOptions } from "$src/types/hast-to-message.ts";
+import type { MessageEntity } from "@grammyjs/types";
+import type { Message } from "$src/types/message.ts";
 import { DEFAULT_OPTIONS } from "./default-options.ts";
 import { renderElement } from "./render-element.ts";
 

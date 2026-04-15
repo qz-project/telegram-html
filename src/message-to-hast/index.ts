@@ -1,9 +1,9 @@
 import { fromHtml } from "hast-util-from-html";
 import { escape as htmlEscaper } from "html-escaper";
 import type { ReadonlyDeep } from "type-fest";
-import type { Root } from "@/index.ts";
-import type { Entity, MergedOptions, MessageToHastOptions } from "@/types/message-to-hast.ts";
-import type { Message } from "@/types/message.ts";
+import type { Root } from "$src/index.ts";
+import type { Entity, MergedOptions, MessageToHastOptions } from "$src/types/message-to-hast.ts";
+import type { Message } from "$src/types/message.ts";
 import { createHtmlMarkers } from "./create-html-marker.ts";
 import { DEFAULT_OPTIONS } from "./default-options.ts";
 import { getEntities } from "./get-entities.ts";

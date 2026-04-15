@@ -1,6 +1,6 @@
 {
   "name": "telegram-html",
-  "version": "0.0.0",
+  "version": "0.0.0-semantically-released",
   "private": false,
   "description": "Convert Telegram Bot API message entity into HTML, or hast, and vice versa.",
   "keywords": [
@@ -36,11 +36,12 @@
     "lint": "eslint . --fix && tsc --noEmit",
     "dev": "tsdown --watch",
     "build": "tsdown",
-    "test": "vitest run --coverage test/",
-    "test:watch": "vitest --coverage",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "check": "pnpm run fmt && pnpm run build && pnpm run lint && pnpm run test"
   },
   "dependencies": {
+    "@grammyjs/types": "^3.26.0",
     "@types/hast": "^3.0.4",
     "hast-util-from-html": "^2.0.3",
     "hast-util-get-attribute": "^1.0.0",
@@ -53,18 +54,57 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
+    "@anolilab/semantic-release-clean-package-json": "^5.5.0",
+    "@anolilab/semantic-release-pnpm": "^8.1.0",
     "@eslint/js": "^10.0.1",
+    "@sebbo2002/semantic-release-jsr": "^3.2.1",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/html-escaper": "^3.0.4",
     "@types/node": "^25.6.0",
     "@vitest/coverage-v8": "^4.1.4",
     "eslint": "^10.2.0",
     "jiti": "^2.6.1",
     "prettier": "^3.8.2",
+    "semantic-release": "^25.0.3",
     "tsdown": "^0.21.8",
     "type-fest": "^5.5.0",
     "typescript": "^6.0.2",
     "typescript-eslint": "^8.58.2",
     "unplugin-unused": "^0.5.7",
     "vitest": "^4.1.4"
+  },
+  "release": {
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "angular",
+          "releaseRules": [
+            {
+              "type": "release",
+              "scope": "patch",
+              "release": "patch"
+            },
+            {
+              "type": "release",
+              "scope": "minor",
+              "release": "minor"
+            },
+            {
+              "type": "release",
+              "scope": "major",
+              "release": "major"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@anolilab/semantic-release-clean-package-json",
+      "@anolilab/semantic-release-pnpm",
+      "@sebbo2002/semantic-release-jsr",
+      "@semantic-release/github"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-import type { DefaultOptions } from "@/types/message-to-hast.ts";
+import type { DefaultOptions } from "$src/types/message-to-hast.ts";
 
 const DEFAULT_OPTIONS: DefaultOptions = {
   classPrefix: "tg-",

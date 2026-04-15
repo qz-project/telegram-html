@@ -3,8 +3,8 @@ import { toHtml } from "hast-util-to-html";
 import { escape } from "html-escaper";
 import type { ReadonlyDeep } from "type-fest";
 import { CONTINUE, SKIP, visit } from "unist-util-visit";
-import type { MessageEntity } from "@/types/message-entity.ts";
-import type { HtmlMarker, MergedOptions } from "@/types/message-to-hast.ts";
+import type { MessageEntity } from "@grammyjs/types";
+import type { HtmlMarker, MergedOptions } from "$src/types/message-to-hast.ts";
 import { MarkerType } from "./create-html-marker.ts";
 import { sanitizeUrl } from "./sanitize-url.ts";
 

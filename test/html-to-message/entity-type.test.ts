@@ -1,7 +1,5 @@
-import { htmlToMessage } from "telegram-html";
-import { describe, it, expect, vi } from "vitest";
-
-vi.setConfig({ testTimeout: 500 });
+import { htmlToMessage } from "$dist";
+import { describe, it, expect } from "vitest";
 
 describe("entity type", () => {
   it("blockquote", () => {

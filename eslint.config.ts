@@ -1,6 +1,6 @@
-import js from "@eslint/js";
-import { defineConfig } from "eslint/config";
 import type { Config } from "eslint/config";
+import { defineConfig } from "eslint/config";
+import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 
 const config: Config[] = defineConfig(
