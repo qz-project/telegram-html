@@ -1,4 +1,4 @@
-import type { MessageEntity } from "$src/types/message-entity.ts";
+import type { MessageEntity } from "@grammyjs/types";
 import type { Entity } from "$src/types/message-to-hast.ts";
 
 /**

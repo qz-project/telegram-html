@@ -1,4 +1,4 @@
-import type { MessageEntity } from "./message-entity.ts";
+import type { MessageEntity } from "@grammyjs/types";
 
 /**
  * Configuration options for `hastToMessage`.

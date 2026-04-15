@@ -1,5 +1,5 @@
 import type { ReadonlyDeep } from "type-fest";
-import type { MessageEntity } from "$src/types/message-entity.ts";
+import type { MessageEntity } from "@grammyjs/types";
 import type { WrapperEntity } from "$src/types/message-to-hast.ts";
 import type { Message } from "$src/types/message.ts";
 

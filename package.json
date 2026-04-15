@@ -41,6 +41,7 @@
     "check": "pnpm run fmt && pnpm run build && pnpm run lint && pnpm run test"
   },
   "dependencies": {
+    "@grammyjs/types": "^3.26.0",
     "@types/hast": "^3.0.4",
     "hast-util-from-html": "^2.0.3",
     "hast-util-get-attribute": "^1.0.0",

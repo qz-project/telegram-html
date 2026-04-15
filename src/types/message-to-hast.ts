@@ -1,6 +1,6 @@
 import type { ReadonlyDeep, RequiredDeep } from "type-fest";
 import type { MarkerType } from "$src/message-to-hast/create-html-marker.ts";
-import type { MessageEntity } from "./message-entity.ts";
+import type { MessageEntity } from "@grammyjs/types";
 
 type MergedOptions = ReadonlyDeep<RequiredDeep<MessageToHastOptions>>;
 type DefaultOptions = ReadonlyDeep<RequiredDeep<MessageToHastOptions>>;

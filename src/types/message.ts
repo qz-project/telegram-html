@@ -1,23 +1,19 @@
-// Keep in sync with https://github.com/grammyjs/types
+import type { MessageEntity } from "@grammyjs/types";
 
-import type { MessageEntity } from "./message-entity.ts";
-
-/**
- * Represents **partial** [Telegram message](https://core.telegram.org/bots/api#message).
- *
- * Only the following properties are relevant: `text`, `entities`, `caption`, and
- * `caption_entities`. Other properties are **ignored**.
- */
+/** Represents **partial** [Telegram message](https://core.telegram.org/bots/api#message) */
 interface Message {
-  /** The actual UTF-8 text of the message (for text messages) */
+  /** The actual UTF-8 text of the message */
   text?: string;
-  /** Special entities like usernames, URLs, bot commands, etc. in the text (for text messages) */
+  /** Special entities like usernames, URLs, bot commands, etc. in the text */
   entities?: MessageEntity[];
-  /** Caption for media such as animation, audio, document, photo, video, or voice */
+  /** Caption for the animation, audio, document, paid media, photo, video or voice */
   caption?: string;
-  /** Special entities like usernames, URLs, bot commands, etc. in the caption (for messages with a caption) */
+  /**
+   * For messages with a caption, special entities like usernames, URLs, bot commands, etc. that
+   * appear in the caption
+   */
   caption_entities?: MessageEntity[];
-  // Allows for additional properties not explicitly defined.
+  /** Other properties */
   [key: string]: unknown;
 }
 

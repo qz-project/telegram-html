@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@grammyjs/types":
+        specifier: ^3.26.0
+        version: 3.26.0
       "@types/hast":
         specifier: ^3.0.4
         version: 3.0.4
@@ -317,6 +320,12 @@ packages:
         integrity: sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==,
       }
     engines: { node: ^20.19.0 || ^22.13.0 || >=24 }
+
+  "@grammyjs/types@3.26.0":
+    resolution:
+      {
+        integrity: sha512-jlnyfxfev/2o68HlvAGRocAXgdPPX5QabG7jZlbqC2r9DZyWBfzTlg+nu3O3Fy4EhgLWu28hZ/8wr7DsNamP9A==,
+      }
 
   "@humanfs/core@0.19.1":
     resolution:
@@ -4383,6 +4392,8 @@ snapshots:
     dependencies:
       "@eslint/core": 1.2.1
       levn: 0.4.1
+
+  "@grammyjs/types@3.26.0": {}
 
   "@humanfs/core@0.19.1": {}
 

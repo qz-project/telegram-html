@@ -5,7 +5,7 @@ import { toText } from "hast-util-to-text";
 import { unescape } from "html-escaper";
 import parseUrl from "parse-url";
 import type { MergedOptions, RenderElementResult } from "$src/types/hast-to-message.ts";
-import type { User } from "$src/types/message-entity.ts";
+import type { User } from "@grammyjs/types";
 import { getUsernameFromUrl } from "./get-username-from-url";
 
 function renderElement(opt: {
