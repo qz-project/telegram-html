@@ -7,7 +7,7 @@ Convert [Telegram Bot API message][tg-msg] entity into HTML, or [hast][], and vi
 
 ## Installation
 
-`telegram-html` is available on both [npm.com][npm] and [JSR.io][jsr].
+`telegram-html` is available on both [npm][npm] and [JSR][jsr].
 
 ### Using npm
 
