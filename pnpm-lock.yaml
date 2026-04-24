@@ -89,7 +89,7 @@ importers:
         version: 0.21.8(typescript@6.0.2)(unplugin-unused@0.5.7)
       type-fest:
         specifier: ^5.5.0
-        version: 5.5.0
+        version: 5.6.0
       typescript:
         specifier: ^6.0.2
         version: 6.0.2
@@ -2268,6 +2268,10 @@ packages:
     resolution: {integrity: sha512-PlBfpQwiUvGViBNX84Yxwjsdhd1TUlXr6zjX7eoirtCPIr08NAmxwa+fcYBTeRQxHo9YC9wwF3m9i700sHma8g==}
     engines: {node: '>=20'}
 
+  type-fest@5.6.0:
+    resolution: {integrity: sha512-8ZiHFm91orbSAe2PSAiSVBVko18pbhbiB3U9GglSzF/zCGkR+rxpHx6sEMCUm4kxY4LjDIUGgCfUMtwfZfjfUA==}
+    engines: {node: '>=20'}
+
   typescript-eslint@8.58.2:
     resolution: {integrity: sha512-V8iSng9mRbdZjl54VJ9NKr6ZB+dW0J3TzRXRGcSbLIej9jV86ZRtlYeTKDR/QLxXykocJ5icNzbsl2+5TzIvcQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3131,7 +3135,7 @@ snapshots:
   '@visulima/fs@4.1.0(yaml@2.8.3)':
     dependencies:
       '@visulima/path': 2.0.5
-      type-fest: 5.5.0
+      type-fest: 5.6.0
     optionalDependencies:
       yaml: 2.8.3
 
@@ -4346,14 +4350,14 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.1
       read-pkg: 10.1.0
-      type-fest: 5.5.0
+      type-fest: 5.6.0
 
   read-pkg@10.1.0:
     dependencies:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 8.0.0
       parse-json: 8.3.0
-      type-fest: 5.5.0
+      type-fest: 5.6.0
       unicorn-magic: 0.4.0
 
   read-pkg@9.0.1:
@@ -4677,6 +4681,10 @@ snapshots:
   type-fest@4.41.0: {}
 
   type-fest@5.5.0:
+    dependencies:
+      tagged-tag: 1.0.0
+
+  type-fest@5.6.0:
     dependencies:
       tagged-tag: 1.0.0
 
