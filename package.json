@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@anolilab/semantic-release-clean-package-json": "^5.5.0",
-    "@anolilab/semantic-release-pnpm": "^8.1.1",
+    "@anolilab/semantic-release-pnpm": "^8.1.2",
     "@eslint/js": "^10.0.1",
     "@sebbo2002/semantic-release-jsr": "^3.2.1",
     "@semantic-release/commit-analyzer": "^13.0.1",
