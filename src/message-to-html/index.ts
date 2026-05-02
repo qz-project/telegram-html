@@ -1,4 +1,3 @@
-import type { Nodes } from "hast";
 import { toHtml } from "hast-util-to-html";
 import { messageToHast } from "$src/message-to-hast/index.ts";
 import type { MessageToHtmlOptions } from "$src/types/message-to-html.ts";
@@ -22,7 +21,7 @@ import type { Message } from "$src/types/message.ts";
  */
 function messageToHtml(message: Message, options?: MessageToHtmlOptions): string {
   const hast = messageToHast(message, options);
-  return toHtml(hast as Nodes);
+  return toHtml(hast);
 }
 
 export { messageToHtml };
