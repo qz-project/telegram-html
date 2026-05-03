@@ -27,7 +27,7 @@ jobs:
       - name: Install pnpm
         # Do not update to v6 until https://github.com/pnpm/action-setup/issues/225 is fixed
         # @anolilab/semantic-release-pnpm is not compatible to pnpm v11
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6
         with:
           version: 10
       - name: Setup Node.js
