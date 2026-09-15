@@ -6,3 +6,6 @@ blockExoticSubdeps: true
 minimumReleaseAge: 8640 # 6 days
 # https://pnpm.io/supply-chain-security#enforce-trust-with-trustpolicy
 trustPolicy: no-downgrade
+minimumReleaseAgeExclude:
+  # Renovate security update: vitest@4.1.11
+  - vitest@4.1.11
